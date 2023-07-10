@@ -61,11 +61,11 @@ namespace ReservasiHotel
             this.tipekamarDataGridViewTextBoxColumn,
             this.hargasewaDataGridViewTextBoxColumn});
             this.dataGridViewKamar.DataSource = this.kamarBindingSource;
-            this.dataGridViewKamar.Location = new System.Drawing.Point(176, 39);
+            this.dataGridViewKamar.Location = new System.Drawing.Point(127, 39);
             this.dataGridViewKamar.Name = "dataGridViewKamar";
             this.dataGridViewKamar.RowHeadersWidth = 51;
             this.dataGridViewKamar.RowTemplate.Height = 24;
-            this.dataGridViewKamar.Size = new System.Drawing.Size(430, 150);
+            this.dataGridViewKamar.Size = new System.Drawing.Size(526, 150);
             this.dataGridViewKamar.TabIndex = 0;
             // 
             // nokamarDataGridViewTextBoxColumn
@@ -149,14 +149,20 @@ namespace ReservasiHotel
             // 
             this.cbTipeKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "tipe_kamar", true));
             this.cbTipeKamar.FormattingEnabled = true;
+            this.cbTipeKamar.Items.AddRange(new object[] {
+            "VIP",
+            "Kelas I",
+            "Kelas II",
+            "Kelas III"});
             this.cbTipeKamar.Location = new System.Drawing.Point(300, 268);
             this.cbTipeKamar.Name = "cbTipeKamar";
             this.cbTipeKamar.Size = new System.Drawing.Size(177, 24);
             this.cbTipeKamar.TabIndex = 6;
+            this.cbTipeKamar.SelectedIndexChanged += new System.EventHandler(this.cbTipeKamar_SelectedIndexChanged);
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(639, 39);
+            this.btnOpen.Location = new System.Drawing.Point(688, 39);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 35);
             this.btnOpen.TabIndex = 7;

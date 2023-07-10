@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataReservasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataReservasi.Designer.cs">
+      <DependentUpon>DataReservasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDataResepsionis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataReservasi.resx">
+      <DependentUpon>DataReservasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDataKamar.resx">
       <DependentUpon>FormDataKamar.cs</DependentUpon>
     </EmbeddedResource>

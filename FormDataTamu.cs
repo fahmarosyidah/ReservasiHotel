@@ -17,7 +17,8 @@ namespace ReservasiHotel
             tbNamaTamu.Text = null;
             tbNoTelp.Text = null;
             rbAlamat.Text = null;
-            btnAdd.Enabled = false;
+            btnOpen.Enabled = true;
+            btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
         }
@@ -45,6 +46,9 @@ namespace ReservasiHotel
         {
             // TODO: This line of code loads data into the 'hotelDataSet1.Tamu' table. You can move, or remove it, as needed.
             this.tamuTableAdapter.Fill(this.hotelDataSet1.Tamu);
+            FormDataMaster dm = new FormDataMaster();
+            dm.Show();
+            this.Hide();
 
         }
 

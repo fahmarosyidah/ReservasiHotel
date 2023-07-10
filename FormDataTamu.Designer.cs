@@ -35,30 +35,30 @@ namespace ReservasiHotel
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbIdTamu = new System.Windows.Forms.TextBox();
+            this.tamuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet1 = new ReservasiHotel.HotelDataSet1();
             this.tbNamaTamu = new System.Windows.Forms.TextBox();
             this.tbNoTelp = new System.Windows.Forms.TextBox();
             this.rbAlamat = new System.Windows.Forms.RichTextBox();
             this.dataGridViewTamu = new System.Windows.Forms.DataGridView();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.hotelDataSet1 = new ReservasiHotel.HotelDataSet1();
-            this.tamuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tamuTableAdapter = new ReservasiHotel.HotelDataSet1TableAdapters.TamuTableAdapter();
             this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namatamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.tamuTableAdapter = new ReservasiHotel.HotelDataSet1TableAdapters.TamuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 212);
+            this.label1.Location = new System.Drawing.Point(185, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace ReservasiHotel
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 267);
+            this.label2.Location = new System.Drawing.Point(184, 276);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
@@ -76,7 +76,7 @@ namespace ReservasiHotel
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(184, 318);
+            this.label3.Location = new System.Drawing.Point(184, 327);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace ReservasiHotel
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(184, 368);
+            this.label4.Location = new System.Drawing.Point(184, 377);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 3;
@@ -94,15 +94,25 @@ namespace ReservasiHotel
             // tbIdTamu
             // 
             this.tbIdTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "id_tamu", true));
-            this.tbIdTamu.Location = new System.Drawing.Point(286, 209);
+            this.tbIdTamu.Location = new System.Drawing.Point(286, 218);
             this.tbIdTamu.Name = "tbIdTamu";
             this.tbIdTamu.Size = new System.Drawing.Size(210, 22);
             this.tbIdTamu.TabIndex = 4;
             // 
+            // tamuBindingSource
+            // 
+            this.tamuBindingSource.DataMember = "Tamu";
+            this.tamuBindingSource.DataSource = this.hotelDataSet1;
+            // 
+            // hotelDataSet1
+            // 
+            this.hotelDataSet1.DataSetName = "HotelDataSet1";
+            this.hotelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tbNamaTamu
             // 
             this.tbNamaTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "nama_tamu", true));
-            this.tbNamaTamu.Location = new System.Drawing.Point(286, 264);
+            this.tbNamaTamu.Location = new System.Drawing.Point(286, 273);
             this.tbNamaTamu.Name = "tbNamaTamu";
             this.tbNamaTamu.Size = new System.Drawing.Size(210, 22);
             this.tbNamaTamu.TabIndex = 5;
@@ -110,7 +120,7 @@ namespace ReservasiHotel
             // tbNoTelp
             // 
             this.tbNoTelp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "no_telp", true));
-            this.tbNoTelp.Location = new System.Drawing.Point(286, 315);
+            this.tbNoTelp.Location = new System.Drawing.Point(286, 324);
             this.tbNoTelp.Name = "tbNoTelp";
             this.tbNoTelp.Size = new System.Drawing.Size(210, 22);
             this.tbNoTelp.TabIndex = 6;
@@ -118,7 +128,7 @@ namespace ReservasiHotel
             // rbAlamat
             // 
             this.rbAlamat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "alamat", true));
-            this.rbAlamat.Location = new System.Drawing.Point(286, 368);
+            this.rbAlamat.Location = new System.Drawing.Point(286, 377);
             this.rbAlamat.Name = "rbAlamat";
             this.rbAlamat.Size = new System.Drawing.Size(210, 62);
             this.rbAlamat.TabIndex = 7;
@@ -134,66 +144,12 @@ namespace ReservasiHotel
             this.notelpDataGridViewTextBoxColumn,
             this.alamatDataGridViewTextBoxColumn});
             this.dataGridViewTamu.DataSource = this.tamuBindingSource;
-            this.dataGridViewTamu.Location = new System.Drawing.Point(117, 40);
+            this.dataGridViewTamu.Location = new System.Drawing.Point(113, 40);
             this.dataGridViewTamu.Name = "dataGridViewTamu";
             this.dataGridViewTamu.RowHeadersWidth = 51;
             this.dataGridViewTamu.RowTemplate.Height = 24;
-            this.dataGridViewTamu.Size = new System.Drawing.Size(550, 150);
+            this.dataGridViewTamu.Size = new System.Drawing.Size(556, 150);
             this.dataGridViewTamu.TabIndex = 8;
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Location = new System.Drawing.Point(694, 40);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 35);
-            this.btnOpen.TabIndex = 9;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(530, 209);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 35);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(421, 458);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(286, 458);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 35);
-            this.btnClear.TabIndex = 12;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // hotelDataSet1
-            // 
-            this.hotelDataSet1.DataSetName = "HotelDataSet1";
-            this.hotelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tamuBindingSource
-            // 
-            this.tamuBindingSource.DataMember = "Tamu";
-            this.tamuBindingSource.DataSource = this.hotelDataSet1;
-            // 
-            // tamuTableAdapter
-            // 
-            this.tamuTableAdapter.ClearBeforeFill = true;
             // 
             // idtamuDataGridViewTextBoxColumn
             // 
@@ -227,11 +183,55 @@ namespace ReservasiHotel
             this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
             this.alamatDataGridViewTextBoxColumn.Width = 125;
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(694, 40);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 35);
+            this.btnOpen.TabIndex = 9;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(530, 218);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 35);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(421, 467);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 35);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(286, 467);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 35);
+            this.btnClear.TabIndex = 12;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // tamuTableAdapter
+            // 
+            this.tamuTableAdapter.ClearBeforeFill = true;
+            // 
             // FormDataTamu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 541);
+            this.ClientSize = new System.Drawing.Size(799, 541);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -248,9 +248,9 @@ namespace ReservasiHotel
             this.Name = "FormDataTamu";
             this.Text = "Data Tamu";
             this.Load += new System.EventHandler(this.FormDataTamu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

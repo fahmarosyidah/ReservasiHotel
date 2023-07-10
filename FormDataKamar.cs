@@ -16,7 +16,8 @@ namespace ReservasiHotel
             tbNoKamar.Text = null;
             cbTipeKamar.Text = null;
             tbHarga.Text = null;
-            btnAdd.Enabled = false;
+            btnOpen.Enabled = true;
+            btnAdd.Enabled = true;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
         }
@@ -44,6 +45,9 @@ namespace ReservasiHotel
         {
             // TODO: This line of code loads data into the 'hotelDataSet.Kamar' table. You can move, or remove it, as needed.
             this.kamarTableAdapter.Fill(this.hotelDataSet.Kamar);
+            FormDataMaster dm = new FormDataMaster();
+            dm.Show();
+            this.Hide();
 
         }
 
@@ -107,6 +111,32 @@ namespace ReservasiHotel
                 dataGridView();
                 refreshform();
             }
+        }
+
+        private void cbTipeKamar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipeKamar = cbTipeKamar.Text;
+            decimal hargaSewa = 0;
+
+            switch (tipeKamar)
+            {
+                case "VIP":
+                    hargaSewa = 1000000;
+                    break;
+                case "Kelas I":
+                    hargaSewa = 750000;
+                    break;
+                case "Kelas II":
+                    hargaSewa = 500000;
+                    break;
+                case "Kelas III":
+                    hargaSewa = 250000;
+                    break;
+                default:
+                    break;
+            }
+
+            tbHarga.Text = hargaSewa.ToString();
         }
     }
 }
