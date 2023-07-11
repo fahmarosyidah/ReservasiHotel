@@ -47,6 +47,7 @@ namespace ReservasiHotel
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.kamarTableAdapter = new ReservasiHotel.HotelDataSetTableAdapters.KamarTableAdapter();
+            this.btnview = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKamar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
@@ -55,6 +56,7 @@ namespace ReservasiHotel
             // dataGridViewKamar
             // 
             this.dataGridViewKamar.AutoGenerateColumns = false;
+            this.dataGridViewKamar.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridViewKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKamar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nokamarDataGridViewTextBoxColumn,
@@ -131,6 +133,7 @@ namespace ReservasiHotel
             // 
             // tbNoKamar
             // 
+            this.tbNoKamar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNoKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "no_kamar", true));
             this.tbNoKamar.Location = new System.Drawing.Point(300, 219);
             this.tbNoKamar.Name = "tbNoKamar";
@@ -139,6 +142,7 @@ namespace ReservasiHotel
             // 
             // tbHarga
             // 
+            this.tbHarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbHarga.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "harga_sewa", true));
             this.tbHarga.Location = new System.Drawing.Point(300, 316);
             this.tbHarga.Name = "tbHarga";
@@ -162,12 +166,13 @@ namespace ReservasiHotel
             // 
             // btnOpen
             // 
+            this.btnOpen.BackColor = System.Drawing.Color.White;
             this.btnOpen.Location = new System.Drawing.Point(688, 39);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 35);
             this.btnOpen.TabIndex = 7;
             this.btnOpen.Text = "Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnAdd
@@ -204,11 +209,24 @@ namespace ReservasiHotel
             // 
             this.kamarTableAdapter.ClearBeforeFill = true;
             // 
+            // btnview
+            // 
+            this.btnview.BackColor = System.Drawing.Color.White;
+            this.btnview.Location = new System.Drawing.Point(688, 100);
+            this.btnview.Name = "btnview";
+            this.btnview.Size = new System.Drawing.Size(75, 39);
+            this.btnview.TabIndex = 11;
+            this.btnview.Text = "View";
+            this.btnview.UseVisualStyleBackColor = false;
+            this.btnview.Click += new System.EventHandler(this.btnview_Click);
+            // 
             // FormDataKamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnview);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -251,5 +269,6 @@ namespace ReservasiHotel
         private System.Windows.Forms.DataGridViewTextBoxColumn nokamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipekamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargasewaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnview;
     }
 }

@@ -30,10 +30,16 @@ namespace ReservasiHotel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewReservasi = new System.Windows.Forms.DataGridView();
-            this.hotelDataSet4 = new ReservasiHotel.HotelDataSet4();
-            this.reservasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservasiTableAdapter = new ReservasiHotel.HotelDataSet4TableAdapters.ReservasiTableAdapter();
             this.idreservasiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpetugasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +49,13 @@ namespace ReservasiHotel
             this.nokamarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lamamenginapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalhargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet4 = new ReservasiHotel.HotelDataSet4();
+            this.reservasiTableAdapter = new ReservasiHotel.HotelDataSet4TableAdapters.ReservasiTableAdapter();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservasi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewReservasi
@@ -68,26 +77,14 @@ namespace ReservasiHotel
             this.dataGridViewReservasi.Name = "dataGridViewReservasi";
             this.dataGridViewReservasi.RowHeadersWidth = 51;
             this.dataGridViewReservasi.RowTemplate.Height = 24;
-            this.dataGridViewReservasi.Size = new System.Drawing.Size(1179, 150);
+            this.dataGridViewReservasi.Size = new System.Drawing.Size(1179, 220);
             this.dataGridViewReservasi.TabIndex = 0;
-            // 
-            // hotelDataSet4
-            // 
-            this.hotelDataSet4.DataSetName = "HotelDataSet4";
-            this.hotelDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reservasiBindingSource
-            // 
-            this.reservasiBindingSource.DataMember = "Reservasi";
-            this.reservasiBindingSource.DataSource = this.hotelDataSet4;
-            // 
-            // reservasiTableAdapter
-            // 
-            this.reservasiTableAdapter.ClearBeforeFill = true;
             // 
             // idreservasiDataGridViewTextBoxColumn
             // 
             this.idreservasiDataGridViewTextBoxColumn.DataPropertyName = "id_reservasi";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idreservasiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.idreservasiDataGridViewTextBoxColumn.HeaderText = "id_reservasi";
             this.idreservasiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idreservasiDataGridViewTextBoxColumn.Name = "idreservasiDataGridViewTextBoxColumn";
@@ -96,6 +93,8 @@ namespace ReservasiHotel
             // idpetugasDataGridViewTextBoxColumn
             // 
             this.idpetugasDataGridViewTextBoxColumn.DataPropertyName = "id_petugas";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idpetugasDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.idpetugasDataGridViewTextBoxColumn.HeaderText = "id_petugas";
             this.idpetugasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idpetugasDataGridViewTextBoxColumn.Name = "idpetugasDataGridViewTextBoxColumn";
@@ -104,6 +103,8 @@ namespace ReservasiHotel
             // idtamuDataGridViewTextBoxColumn
             // 
             this.idtamuDataGridViewTextBoxColumn.DataPropertyName = "id_tamu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtamuDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.idtamuDataGridViewTextBoxColumn.HeaderText = "id_tamu";
             this.idtamuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idtamuDataGridViewTextBoxColumn.Name = "idtamuDataGridViewTextBoxColumn";
@@ -112,6 +113,8 @@ namespace ReservasiHotel
             // tanggalbookingDataGridViewTextBoxColumn
             // 
             this.tanggalbookingDataGridViewTextBoxColumn.DataPropertyName = "tanggal_booking";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tanggalbookingDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.tanggalbookingDataGridViewTextBoxColumn.HeaderText = "tanggal_booking";
             this.tanggalbookingDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tanggalbookingDataGridViewTextBoxColumn.Name = "tanggalbookingDataGridViewTextBoxColumn";
@@ -120,6 +123,8 @@ namespace ReservasiHotel
             // tipekamarDataGridViewTextBoxColumn
             // 
             this.tipekamarDataGridViewTextBoxColumn.DataPropertyName = "tipe_kamar";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tipekamarDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.tipekamarDataGridViewTextBoxColumn.HeaderText = "tipe_kamar";
             this.tipekamarDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tipekamarDataGridViewTextBoxColumn.Name = "tipekamarDataGridViewTextBoxColumn";
@@ -128,6 +133,8 @@ namespace ReservasiHotel
             // hargasewaDataGridViewTextBoxColumn
             // 
             this.hargasewaDataGridViewTextBoxColumn.DataPropertyName = "harga_sewa";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.hargasewaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.hargasewaDataGridViewTextBoxColumn.HeaderText = "harga_sewa";
             this.hargasewaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hargasewaDataGridViewTextBoxColumn.Name = "hargasewaDataGridViewTextBoxColumn";
@@ -136,6 +143,8 @@ namespace ReservasiHotel
             // nokamarDataGridViewTextBoxColumn
             // 
             this.nokamarDataGridViewTextBoxColumn.DataPropertyName = "no_kamar";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nokamarDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.nokamarDataGridViewTextBoxColumn.HeaderText = "no_kamar";
             this.nokamarDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nokamarDataGridViewTextBoxColumn.Name = "nokamarDataGridViewTextBoxColumn";
@@ -144,6 +153,8 @@ namespace ReservasiHotel
             // lamamenginapDataGridViewTextBoxColumn
             // 
             this.lamamenginapDataGridViewTextBoxColumn.DataPropertyName = "lama_menginap";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lamamenginapDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.lamamenginapDataGridViewTextBoxColumn.HeaderText = "lama_menginap";
             this.lamamenginapDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lamamenginapDataGridViewTextBoxColumn.Name = "lamamenginapDataGridViewTextBoxColumn";
@@ -152,16 +163,32 @@ namespace ReservasiHotel
             // totalhargaDataGridViewTextBoxColumn
             // 
             this.totalhargaDataGridViewTextBoxColumn.DataPropertyName = "total_harga";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.totalhargaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.totalhargaDataGridViewTextBoxColumn.HeaderText = "total_harga";
             this.totalhargaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.totalhargaDataGridViewTextBoxColumn.Name = "totalhargaDataGridViewTextBoxColumn";
             this.totalhargaDataGridViewTextBoxColumn.Width = 125;
             // 
+            // reservasiBindingSource
+            // 
+            this.reservasiBindingSource.DataMember = "Reservasi";
+            this.reservasiBindingSource.DataSource = this.hotelDataSet4;
+            // 
+            // hotelDataSet4
+            // 
+            this.hotelDataSet4.DataSetName = "HotelDataSet4";
+            this.hotelDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservasiTableAdapter
+            // 
+            this.reservasiTableAdapter.ClearBeforeFill = true;
+            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(1139, 210);
+            this.btnBack.Location = new System.Drawing.Point(1126, 287);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 30);
+            this.btnBack.Size = new System.Drawing.Size(88, 44);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -171,6 +198,7 @@ namespace ReservasiHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1257, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridViewReservasi);
@@ -178,8 +206,8 @@ namespace ReservasiHotel
             this.Text = "Data Reservasi";
             this.Load += new System.EventHandler(this.DataReservasi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservasi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +218,7 @@ namespace ReservasiHotel
         private HotelDataSet4 hotelDataSet4;
         private System.Windows.Forms.BindingSource reservasiBindingSource;
         private HotelDataSet4TableAdapters.ReservasiTableAdapter reservasiTableAdapter;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn idreservasiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpetugasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtamuDataGridViewTextBoxColumn;
@@ -199,6 +228,5 @@ namespace ReservasiHotel
         private System.Windows.Forms.DataGridViewTextBoxColumn nokamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lamamenginapDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalhargaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnBack;
     }
 }

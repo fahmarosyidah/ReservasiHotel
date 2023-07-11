@@ -52,6 +52,12 @@
     <Compile Include="DataReservasi.Designer.cs">
       <DependentUpon>DataReservasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataFasilitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataFasilitas.Designer.cs">
+      <DependentUpon>DataFasilitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDataResepsionis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,10 +113,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HotelDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DataReservasi.resx">
       <DependentUpon>DataReservasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataFasilitas.resx">
+      <DependentUpon>DataFasilitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDataKamar.resx">
       <DependentUpon>FormDataKamar.cs</DependentUpon>
@@ -190,6 +209,28 @@
     </None>
     <None Include="HotelDataSet4.xss">
       <DependentUpon>HotelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet5.xsc">
+      <DependentUpon>HotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet5.xss">
+      <DependentUpon>HotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet6.xsc">
+      <DependentUpon>HotelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet6.xss">
+      <DependentUpon>HotelDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

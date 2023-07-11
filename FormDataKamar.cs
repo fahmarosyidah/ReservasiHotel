@@ -138,5 +138,12 @@ namespace ReservasiHotel
 
             tbHarga.Text = hargaSewa.ToString();
         }
+
+        private void btnview_Click(object sender, EventArgs e)
+        {
+            DataFasilitas df = new DataFasilitas();
+            df.Show();
+            this.Hide();
+        }
     }
 }

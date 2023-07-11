@@ -41,15 +41,15 @@ namespace ReservasiHotel
             this.tbNoTelp = new System.Windows.Forms.TextBox();
             this.rbAlamat = new System.Windows.Forms.RichTextBox();
             this.dataGridViewTamu = new System.Windows.Forms.DataGridView();
-            this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namatamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.tamuTableAdapter = new ReservasiHotel.HotelDataSet1TableAdapters.TamuTableAdapter();
+            this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namatamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).BeginInit();
@@ -151,38 +151,6 @@ namespace ReservasiHotel
             this.dataGridViewTamu.Size = new System.Drawing.Size(556, 150);
             this.dataGridViewTamu.TabIndex = 8;
             // 
-            // idtamuDataGridViewTextBoxColumn
-            // 
-            this.idtamuDataGridViewTextBoxColumn.DataPropertyName = "id_tamu";
-            this.idtamuDataGridViewTextBoxColumn.HeaderText = "id_tamu";
-            this.idtamuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idtamuDataGridViewTextBoxColumn.Name = "idtamuDataGridViewTextBoxColumn";
-            this.idtamuDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // namatamuDataGridViewTextBoxColumn
-            // 
-            this.namatamuDataGridViewTextBoxColumn.DataPropertyName = "nama_tamu";
-            this.namatamuDataGridViewTextBoxColumn.HeaderText = "nama_tamu";
-            this.namatamuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namatamuDataGridViewTextBoxColumn.Name = "namatamuDataGridViewTextBoxColumn";
-            this.namatamuDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // notelpDataGridViewTextBoxColumn
-            // 
-            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
-            this.notelpDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            this.alamatDataGridViewTextBoxColumn.Width = 125;
-            // 
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(694, 40);
@@ -226,6 +194,37 @@ namespace ReservasiHotel
             // tamuTableAdapter
             // 
             this.tamuTableAdapter.ClearBeforeFill = true;
+            // 
+            // idtamuDataGridViewTextBoxColumn
+            // 
+            this.idtamuDataGridViewTextBoxColumn.DataPropertyName = "id_tamu";
+            this.idtamuDataGridViewTextBoxColumn.HeaderText = "id_tamu";
+            this.idtamuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idtamuDataGridViewTextBoxColumn.Name = "idtamuDataGridViewTextBoxColumn";
+            // 
+            // namatamuDataGridViewTextBoxColumn
+            // 
+            this.namatamuDataGridViewTextBoxColumn.DataPropertyName = "nama_tamu";
+            this.namatamuDataGridViewTextBoxColumn.HeaderText = "nama_tamu";
+            this.namatamuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namatamuDataGridViewTextBoxColumn.Name = "namatamuDataGridViewTextBoxColumn";
+            this.namatamuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // notelpDataGridViewTextBoxColumn
+            // 
+            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
+            this.notelpDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            this.alamatDataGridViewTextBoxColumn.Width = 160;
             // 
             // FormDataTamu
             // 
