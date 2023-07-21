@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -11,18 +10,6 @@ namespace ReservasiHotel
         private string stringConnection = "data source = DESKTOP-TV0IMN6\\FAHMA_ROSYI; database = Hotel; User ID = sa; password = 123";
         private SqlConnection koneksi;
 
-        private void refreshform()
-        {
-            tbIdTamu.Text = null;
-            tbNamaTamu.Text = null;
-            tbNoTelp.Text = null;
-            rbAlamat.Text = null;
-            btnOpen.Enabled = true;
-            btnAdd.Enabled = true;
-            btnSave.Enabled = false;
-            btnClear.Enabled = false;
-        }
-
         public FormDataTamu()
         {
             InitializeComponent();
@@ -31,33 +18,45 @@ namespace ReservasiHotel
             refreshform();
         }
 
-        private void dataGridView()
+        private void refreshform()
         {
-            koneksi.Open();
-            string str = "select id_tamu, nama_tamu, no_telp, alamat from dbo.Tamu";
-            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridViewTamu.DataSource = ds.Tables[0];
-            koneksi.Close();
+            tbIdTamu.Text = "";
+            tbNamaTamu.Text = "";
+            tbNoTelp.Text = "";
+            rbAlamat.Text = "";
+            tbIdTamu.Enabled = false;
+            tbNamaTamu.Enabled = false;
+            tbNoTelp.Enabled = false;
+            rbAlamat.Enabled = false;
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnClear.Enabled = false;
         }
 
         private void FormDataTamu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hotelDataSet15.Tamu' table. You can move, or remove it, as needed.
-            this.tamuTableAdapter1.Fill(this.hotelDataSet15.Tamu);
-            // TODO: This line of code loads data into the 'hotelDataSet1.Tamu' table. You can move, or remove it, as needed.
-            this.tamuTableAdapter.Fill(this.hotelDataSet1.Tamu);
-            FormDataMaster dm = new FormDataMaster();
-            dm.Show();
-            this.Hide();
+            dataGridViewTamu.DataSource = GetTamuData();
+        }
 
+        private DataTable GetTamuData()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                string query = "SELECT id_tamu, nama_tamu, no_telp, alamat FROM Tamu";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataTable);
+            }
+
+            return dataTable;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            dataGridView();
             dataGridViewTamu.Visible = true;
+            dataGridViewTamu.DataSource = GetTamuData();
             btnAdd.Enabled = true;
             btnOpen.Enabled = false;
         }
@@ -89,38 +88,120 @@ namespace ReservasiHotel
             string noTelp = tbNoTelp.Text;
             string alamat = rbAlamat.Text;
 
-            if (idTamu == "")
+            if (string.IsNullOrEmpty(idTamu) || string.IsNullOrEmpty(nmTamu) || string.IsNullOrEmpty(noTelp) || string.IsNullOrEmpty(alamat))
             {
-                MessageBox.Show("Masukkan Id Tamu", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (nmTamu == "")
-            {
-                MessageBox.Show("Masukkan Nama Tamu", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (noTelp == "")
-            {
-                MessageBox.Show("Masukkan No Telpon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (alamat == "")
-            {
-                MessageBox.Show("Masukkan Alamat", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Data tidak lengkap", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                koneksi.Open();
-                string str = "insert into dbo.Tamu (id_tamu, nama_tamu, no_telp, alamat)" + "values(@id, @nm, @tlp, @al)";
-                SqlCommand cmd = new SqlCommand(str, koneksi);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("id", idTamu));
-                cmd.Parameters.Add(new SqlParameter("nm", nmTamu));
-                cmd.Parameters.Add(new SqlParameter("tlp", noTelp));
-                cmd.Parameters.Add(new SqlParameter("al", alamat));
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    koneksi.Open();
+                    string query = "INSERT INTO Tamu (id_tamu, nama_tamu, no_telp, alamat) VALUES (@id, @nm, @tlp, @al)";
+                    SqlCommand cmd = new SqlCommand(query, koneksi);
+                    cmd.Parameters.AddWithValue("@id", idTamu);
+                    cmd.Parameters.AddWithValue("@nm", nmTamu);
+                    cmd.Parameters.AddWithValue("@tlp", noTelp);
+                    cmd.Parameters.AddWithValue("@al", alamat);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data berhasil disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridViewTamu.DataSource = GetTamuData();
+                    refreshform();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    koneksi.Close();
+                }
+            }
+        }
 
-                koneksi.Close();
-                MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridView();
-                refreshform();
+        private void dataGridViewTamu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewTamu.Rows[e.RowIndex];
+                tbIdTamu.Text = row.Cells["id_tamu"].Value.ToString();
+                tbNamaTamu.Text = row.Cells["nama_tamu"].Value.ToString();
+                tbNoTelp.Text = row.Cells["no_telp"].Value.ToString();
+                rbAlamat.Text = row.Cells["alamat"].Value.ToString();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string idTamu = tbIdTamu.Text;
+            string nmTamu = tbNamaTamu.Text;
+            string noTelp = tbNoTelp.Text;
+            string alamat = rbAlamat.Text;
+
+            if (string.IsNullOrEmpty(idTamu) || string.IsNullOrEmpty(nmTamu) || string.IsNullOrEmpty(noTelp) || string.IsNullOrEmpty(alamat))
+            {
+                MessageBox.Show("Data tidak lengkap", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    koneksi.Open();
+                    string query = "UPDATE Tamu SET nama_tamu = @nm, no_telp = @tlp, alamat = @al WHERE id_tamu = @id";
+                    SqlCommand cmd = new SqlCommand(query, koneksi);
+                    cmd.Parameters.AddWithValue("@nm", nmTamu);
+                    cmd.Parameters.AddWithValue("@tlp", noTelp);
+                    cmd.Parameters.AddWithValue("@al", alamat);
+                    cmd.Parameters.AddWithValue("@id", idTamu);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data berhasil diupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridViewTamu.DataSource = GetTamuData();
+                    refreshform();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    koneksi.Close();
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string idTamu = tbIdTamu.Text;
+
+            if (string.IsNullOrEmpty(idTamu))
+            {
+                MessageBox.Show("Isi ID Tamu yang akan dihapus", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        koneksi.Open();
+                        string query = "DELETE FROM Tamu WHERE id_tamu = @id";
+                        SqlCommand cmd = new SqlCommand(query, koneksi);
+                        cmd.Parameters.AddWithValue("@id", idTamu);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dataGridViewTamu.DataSource = GetTamuData();
+                        refreshform();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        koneksi.Close();
+                    }
+                }
             }
         }
     }

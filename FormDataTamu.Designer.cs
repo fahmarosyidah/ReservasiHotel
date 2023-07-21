@@ -35,6 +35,8 @@ namespace ReservasiHotel
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbIdTamu = new System.Windows.Forms.TextBox();
+            this.tamuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet15 = new ReservasiHotel.HotelDataSet15();
             this.tamuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet1 = new ReservasiHotel.HotelDataSet1();
             this.tbNamaTamu = new System.Windows.Forms.TextBox();
@@ -50,14 +52,14 @@ namespace ReservasiHotel
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.tamuTableAdapter = new ReservasiHotel.HotelDataSet1TableAdapters.TamuTableAdapter();
-            this.hotelDataSet15 = new ReservasiHotel.HotelDataSet15();
-            this.tamuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tamuTableAdapter1 = new ReservasiHotel.HotelDataSet15TableAdapters.TamuTableAdapter();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,6 +105,16 @@ namespace ReservasiHotel
             this.tbIdTamu.Name = "tbIdTamu";
             this.tbIdTamu.Size = new System.Drawing.Size(210, 22);
             this.tbIdTamu.TabIndex = 4;
+            // 
+            // tamuBindingSource1
+            // 
+            this.tamuBindingSource1.DataMember = "Tamu";
+            this.tamuBindingSource1.DataSource = this.hotelDataSet15;
+            // 
+            // hotelDataSet15
+            // 
+            this.hotelDataSet15.DataSetName = "HotelDataSet15";
+            this.hotelDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tamuBindingSource
             // 
@@ -155,6 +167,7 @@ namespace ReservasiHotel
             this.dataGridViewTamu.RowTemplate.Height = 24;
             this.dataGridViewTamu.Size = new System.Drawing.Size(556, 150);
             this.dataGridViewTamu.TabIndex = 8;
+            this.dataGridViewTamu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTamu_CellContentClick);
             // 
             // idtamuDataGridViewTextBoxColumn
             // 
@@ -232,19 +245,29 @@ namespace ReservasiHotel
             // 
             this.tamuTableAdapter.ClearBeforeFill = true;
             // 
-            // hotelDataSet15
-            // 
-            this.hotelDataSet15.DataSetName = "HotelDataSet15";
-            this.hotelDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tamuBindingSource1
-            // 
-            this.tamuBindingSource1.DataMember = "Tamu";
-            this.tamuBindingSource1.DataSource = this.hotelDataSet15;
-            // 
             // tamuTableAdapter1
             // 
             this.tamuTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(530, 270);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 35);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(530, 324);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormDataTamu
             // 
@@ -252,6 +275,8 @@ namespace ReservasiHotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(799, 541);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -268,11 +293,11 @@ namespace ReservasiHotel
             this.Name = "FormDataTamu";
             this.Text = "Data Tamu";
             this.Load += new System.EventHandler(this.FormDataTamu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +328,7 @@ namespace ReservasiHotel
         private HotelDataSet15 hotelDataSet15;
         private System.Windows.Forms.BindingSource tamuBindingSource1;
         private HotelDataSet15TableAdapters.TamuTableAdapter tamuTableAdapter1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
