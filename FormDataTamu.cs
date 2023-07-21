@@ -44,6 +44,8 @@ namespace ReservasiHotel
 
         private void FormDataTamu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet15.Tamu' table. You can move, or remove it, as needed.
+            this.tamuTableAdapter1.Fill(this.hotelDataSet15.Tamu);
             // TODO: This line of code loads data into the 'hotelDataSet1.Tamu' table. You can move, or remove it, as needed.
             this.tamuTableAdapter.Fill(this.hotelDataSet1.Tamu);
             FormDataMaster dm = new FormDataMaster();

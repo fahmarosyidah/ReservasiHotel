@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HotelDataSet23" targetNamespace="http://tempuri.org/HotelDataSet23.xsd" xmlns:mstns="http://tempuri.org/HotelDataSet23.xsd" xmlns="http://tempuri.org/HotelDataSet23.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HotelConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReservasiHotel.Properties.Settings.GlobalReference.Default.HotelConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReservasiTableAdapter" GeneratorDataComponentClassName="ReservasiTableAdapter" Name="Reservasi" UserDataComponentName="ReservasiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="Hotel.dbo.Reservasi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nama_hotel FROM dbo.Reservasi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nama_hotel" DataSetColumn="nama_hotel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HotelDataSet23" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HotelDataSet23" msprop:Generator_UserDSName="HotelDataSet23">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Reservasi" msprop:Generator_TableClassName="ReservasiDataTable" msprop:Generator_TableVarName="tableReservasi" msprop:Generator_TablePropName="Reservasi" msprop:Generator_RowDeletingName="ReservasiRowDeleting" msprop:Generator_RowChangingName="ReservasiRowChanging" msprop:Generator_RowEvHandlerName="ReservasiRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservasiRowDeleted" msprop:Generator_UserTableName="Reservasi" msprop:Generator_RowChangedName="ReservasiRowChanged" msprop:Generator_RowEvArgName="ReservasiRowChangeEvent" msprop:Generator_RowClassName="ReservasiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nama_hotel" msprop:Generator_ColumnVarNameInTable="columnnama_hotel" msprop:Generator_ColumnPropNameInRow="nama_hotel" msprop:Generator_ColumnPropNameInTable="nama_hotelColumn" msprop:Generator_UserColumnName="nama_hotel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

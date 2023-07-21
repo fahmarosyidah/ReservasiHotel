@@ -31,6 +31,10 @@ namespace ReservasiHotel
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewRsp = new System.Windows.Forms.DataGridView();
+            this.idpetugasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namapetugasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resepsionisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet2 = new ReservasiHotel.HotelDataSet2();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,13 +50,14 @@ namespace ReservasiHotel
             this.btnClear = new System.Windows.Forms.Button();
             this.rbAlamat = new System.Windows.Forms.RichTextBox();
             this.resepsionisTableAdapter = new ReservasiHotel.HotelDataSet2TableAdapters.ResepsionisTableAdapter();
-            this.idpetugasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namapetugasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelDataSet14 = new ReservasiHotel.HotelDataSet14();
+            this.resepsionisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.resepsionisTableAdapter1 = new ReservasiHotel.HotelDataSet14TableAdapters.ResepsionisTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resepsionisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resepsionisBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewRsp
@@ -64,13 +69,45 @@ namespace ReservasiHotel
             this.namapetugasDataGridViewTextBoxColumn,
             this.notelpDataGridViewTextBoxColumn,
             this.alamatDataGridViewTextBoxColumn});
-            this.dataGridViewRsp.DataSource = this.resepsionisBindingSource;
+            this.dataGridViewRsp.DataSource = this.resepsionisBindingSource1;
             this.dataGridViewRsp.Location = new System.Drawing.Point(118, 39);
             this.dataGridViewRsp.Name = "dataGridViewRsp";
             this.dataGridViewRsp.RowHeadersWidth = 51;
             this.dataGridViewRsp.RowTemplate.Height = 24;
             this.dataGridViewRsp.Size = new System.Drawing.Size(546, 145);
             this.dataGridViewRsp.TabIndex = 0;
+            // 
+            // idpetugasDataGridViewTextBoxColumn
+            // 
+            this.idpetugasDataGridViewTextBoxColumn.DataPropertyName = "id_petugas";
+            this.idpetugasDataGridViewTextBoxColumn.HeaderText = "id_petugas";
+            this.idpetugasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idpetugasDataGridViewTextBoxColumn.Name = "idpetugasDataGridViewTextBoxColumn";
+            this.idpetugasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // namapetugasDataGridViewTextBoxColumn
+            // 
+            this.namapetugasDataGridViewTextBoxColumn.DataPropertyName = "nama_petugas";
+            this.namapetugasDataGridViewTextBoxColumn.HeaderText = "nama_petugas";
+            this.namapetugasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namapetugasDataGridViewTextBoxColumn.Name = "namapetugasDataGridViewTextBoxColumn";
+            this.namapetugasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // notelpDataGridViewTextBoxColumn
+            // 
+            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
+            this.notelpDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            this.alamatDataGridViewTextBoxColumn.Width = 160;
             // 
             // resepsionisBindingSource
             // 
@@ -120,7 +157,7 @@ namespace ReservasiHotel
             // 
             // tbIdRsp
             // 
-            this.tbIdRsp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource, "id_petugas", true));
+            this.tbIdRsp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource1, "id_petugas", true));
             this.tbIdRsp.Location = new System.Drawing.Point(286, 213);
             this.tbIdRsp.Name = "tbIdRsp";
             this.tbIdRsp.Size = new System.Drawing.Size(241, 22);
@@ -128,7 +165,7 @@ namespace ReservasiHotel
             // 
             // tbNamaRsp
             // 
-            this.tbNamaRsp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource, "nama_petugas", true));
+            this.tbNamaRsp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource1, "nama_petugas", true));
             this.tbNamaRsp.Location = new System.Drawing.Point(286, 259);
             this.tbNamaRsp.Name = "tbNamaRsp";
             this.tbNamaRsp.Size = new System.Drawing.Size(241, 22);
@@ -136,7 +173,7 @@ namespace ReservasiHotel
             // 
             // tbNoTelp
             // 
-            this.tbNoTelp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource, "no_telp", true));
+            this.tbNoTelp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource1, "no_telp", true));
             this.tbNoTelp.Location = new System.Drawing.Point(286, 305);
             this.tbNoTelp.Name = "tbNoTelp";
             this.tbNoTelp.Size = new System.Drawing.Size(241, 22);
@@ -184,7 +221,7 @@ namespace ReservasiHotel
             // 
             // rbAlamat
             // 
-            this.rbAlamat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource, "alamat", true));
+            this.rbAlamat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.resepsionisBindingSource1, "alamat", true));
             this.rbAlamat.Location = new System.Drawing.Point(286, 354);
             this.rbAlamat.Name = "rbAlamat";
             this.rbAlamat.Size = new System.Drawing.Size(241, 96);
@@ -195,41 +232,25 @@ namespace ReservasiHotel
             // 
             this.resepsionisTableAdapter.ClearBeforeFill = true;
             // 
-            // idpetugasDataGridViewTextBoxColumn
+            // hotelDataSet14
             // 
-            this.idpetugasDataGridViewTextBoxColumn.DataPropertyName = "id_petugas";
-            this.idpetugasDataGridViewTextBoxColumn.HeaderText = "id_petugas";
-            this.idpetugasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idpetugasDataGridViewTextBoxColumn.Name = "idpetugasDataGridViewTextBoxColumn";
+            this.hotelDataSet14.DataSetName = "HotelDataSet14";
+            this.hotelDataSet14.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // namapetugasDataGridViewTextBoxColumn
+            // resepsionisBindingSource1
             // 
-            this.namapetugasDataGridViewTextBoxColumn.DataPropertyName = "nama_petugas";
-            this.namapetugasDataGridViewTextBoxColumn.HeaderText = "nama_petugas";
-            this.namapetugasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namapetugasDataGridViewTextBoxColumn.Name = "namapetugasDataGridViewTextBoxColumn";
-            this.namapetugasDataGridViewTextBoxColumn.Width = 125;
+            this.resepsionisBindingSource1.DataMember = "Resepsionis";
+            this.resepsionisBindingSource1.DataSource = this.hotelDataSet14;
             // 
-            // notelpDataGridViewTextBoxColumn
+            // resepsionisTableAdapter1
             // 
-            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
-            this.notelpDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            this.alamatDataGridViewTextBoxColumn.Width = 160;
+            this.resepsionisTableAdapter1.ClearBeforeFill = true;
             // 
             // FormDataResepsionis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 540);
             this.Controls.Add(this.rbAlamat);
             this.Controls.Add(this.btnClear);
@@ -250,6 +271,8 @@ namespace ReservasiHotel
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRsp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resepsionisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resepsionisBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +300,8 @@ namespace ReservasiHotel
         private System.Windows.Forms.DataGridViewTextBoxColumn namapetugasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notelpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private HotelDataSet14 hotelDataSet14;
+        private System.Windows.Forms.BindingSource resepsionisBindingSource1;
+        private HotelDataSet14TableAdapters.ResepsionisTableAdapter resepsionisTableAdapter1;
     }
 }

@@ -47,10 +47,14 @@ namespace ReservasiHotel
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.kamarTableAdapter = new ReservasiHotel.HotelDataSetTableAdapters.KamarTableAdapter();
-            this.btnview = new System.Windows.Forms.Button();
+            this.hotelDataSet13 = new ReservasiHotel.HotelDataSet13();
+            this.kamarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kamarTableAdapter1 = new ReservasiHotel.HotelDataSet13TableAdapters.KamarTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKamar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewKamar
@@ -62,7 +66,7 @@ namespace ReservasiHotel
             this.nokamarDataGridViewTextBoxColumn,
             this.tipekamarDataGridViewTextBoxColumn,
             this.hargasewaDataGridViewTextBoxColumn});
-            this.dataGridViewKamar.DataSource = this.kamarBindingSource;
+            this.dataGridViewKamar.DataSource = this.kamarBindingSource1;
             this.dataGridViewKamar.Location = new System.Drawing.Point(127, 39);
             this.dataGridViewKamar.Name = "dataGridViewKamar";
             this.dataGridViewKamar.RowHeadersWidth = 51;
@@ -134,7 +138,7 @@ namespace ReservasiHotel
             // tbNoKamar
             // 
             this.tbNoKamar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbNoKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "no_kamar", true));
+            this.tbNoKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource1, "no_kamar", true));
             this.tbNoKamar.Location = new System.Drawing.Point(300, 219);
             this.tbNoKamar.Name = "tbNoKamar";
             this.tbNoKamar.Size = new System.Drawing.Size(177, 22);
@@ -143,7 +147,7 @@ namespace ReservasiHotel
             // tbHarga
             // 
             this.tbHarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbHarga.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "harga_sewa", true));
+            this.tbHarga.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource1, "harga_sewa", true));
             this.tbHarga.Location = new System.Drawing.Point(300, 316);
             this.tbHarga.Name = "tbHarga";
             this.tbHarga.Size = new System.Drawing.Size(177, 22);
@@ -151,7 +155,7 @@ namespace ReservasiHotel
             // 
             // cbTipeKamar
             // 
-            this.cbTipeKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource, "tipe_kamar", true));
+            this.cbTipeKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kamarBindingSource1, "tipe_kamar", true));
             this.cbTipeKamar.FormattingEnabled = true;
             this.cbTipeKamar.Items.AddRange(new object[] {
             "VIP",
@@ -209,16 +213,19 @@ namespace ReservasiHotel
             // 
             this.kamarTableAdapter.ClearBeforeFill = true;
             // 
-            // btnview
+            // hotelDataSet13
             // 
-            this.btnview.BackColor = System.Drawing.Color.White;
-            this.btnview.Location = new System.Drawing.Point(688, 100);
-            this.btnview.Name = "btnview";
-            this.btnview.Size = new System.Drawing.Size(75, 39);
-            this.btnview.TabIndex = 11;
-            this.btnview.Text = "View";
-            this.btnview.UseVisualStyleBackColor = false;
-            this.btnview.Click += new System.EventHandler(this.btnview_Click);
+            this.hotelDataSet13.DataSetName = "HotelDataSet13";
+            this.hotelDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kamarBindingSource1
+            // 
+            this.kamarBindingSource1.DataMember = "Kamar";
+            this.kamarBindingSource1.DataSource = this.hotelDataSet13;
+            // 
+            // kamarTableAdapter1
+            // 
+            this.kamarTableAdapter1.ClearBeforeFill = true;
             // 
             // FormDataKamar
             // 
@@ -226,7 +233,6 @@ namespace ReservasiHotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnview);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -245,6 +251,8 @@ namespace ReservasiHotel
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKamar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kamarBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +277,8 @@ namespace ReservasiHotel
         private System.Windows.Forms.DataGridViewTextBoxColumn nokamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipekamarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargasewaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnview;
+        private HotelDataSet13 hotelDataSet13;
+        private System.Windows.Forms.BindingSource kamarBindingSource1;
+        private HotelDataSet13TableAdapters.KamarTableAdapter kamarTableAdapter1;
     }
 }

@@ -43,8 +43,10 @@ namespace ReservasiHotel
 
         private void FormDataKamar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet13.Kamar' table. You can move, or remove it, as needed.
+            this.kamarTableAdapter1.Fill(this.hotelDataSet13.Kamar);
             // TODO: This line of code loads data into the 'hotelDataSet.Kamar' table. You can move, or remove it, as needed.
-            this.kamarTableAdapter.Fill(this.hotelDataSet.Kamar);
+            //this.kamarTableAdapter.Fill(this.hotelDataSet.Kamar);
             FormDataMaster dm = new FormDataMaster();
             dm.Show();
             this.Hide();
@@ -81,7 +83,13 @@ namespace ReservasiHotel
         {
             string noKamar = tbNoKamar.Text;
             string tipeKamar = cbTipeKamar.Text;
-            string harga = tbHarga.Text;
+            decimal harga = 0;
+
+            if (!decimal.TryParse(tbHarga.Text, out harga))
+            {
+                MessageBox.Show("Masukkan Harga Sewa dengan format yang benar", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (noKamar == "")
             {
@@ -90,10 +98,6 @@ namespace ReservasiHotel
             else if (tipeKamar == "")
             {
                 MessageBox.Show("Masukkan Tipe Kamar", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (harga == "")
-            {
-                MessageBox.Show("Masukkan Harga Sewa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -136,7 +140,7 @@ namespace ReservasiHotel
                     break;
             }
 
-            tbHarga.Text = hargaSewa.ToString();
+            tbHarga.Text = hargaSewa.ToString("N2");
         }
 
         private void btnview_Click(object sender, EventArgs e)
@@ -145,5 +149,43 @@ namespace ReservasiHotel
             df.Show();
             this.Hide();
         }
+
+        private void DeleteData()
+        {
+            if (dataGridViewKamar.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menghapus data terpilih?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string noKamar = dataGridViewKamar.SelectedRows[0].Cells["no_kamar"].Value.ToString();
+                    string tipeKamar = dataGridViewKamar.SelectedRows[0].Cells["tipe_kamar"].Value.ToString();
+
+                    try
+                    {
+                        koneksi.Open();
+                        string query = "DELETE FROM Kamar WHERE no_kamar = @noKamar AND tipe_kamar = @tipeKamar";
+                        SqlCommand command = new SqlCommand(query, koneksi);
+                        command.Parameters.AddWithValue("@noKamar", noKamar);
+                        command.Parameters.AddWithValue("@tipeKamar", tipeKamar);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dataGridViewKamar.Rows.RemoveAt(dataGridViewKamar.SelectedRows[0].Index);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        koneksi.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih baris data yang akan dihapus", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

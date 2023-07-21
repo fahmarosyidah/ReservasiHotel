@@ -44,6 +44,8 @@ namespace ReservasiHotel
 
         private void FormDataResepsionis_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet14.Resepsionis' table. You can move, or remove it, as needed.
+            this.resepsionisTableAdapter1.Fill(this.hotelDataSet14.Resepsionis);
             // TODO: This line of code loads data into the 'hotelDataSet2.Resepsionis' table. You can move, or remove it, as needed.
             this.resepsionisTableAdapter.Fill(this.hotelDataSet2.Resepsionis);
             FormDataMaster dm = new FormDataMaster();

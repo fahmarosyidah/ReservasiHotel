@@ -36,15 +36,19 @@ namespace ReservasiHotel
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbIdReservasi = new System.Windows.Forms.TextBox();
+            this.reservasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet8 = new ReservasiHotel.HotelDataSet8();
             this.reservasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet4 = new ReservasiHotel.HotelDataSet4();
-            this.tbIdRsp = new System.Windows.Forms.TextBox();
-            this.tbIdTamu = new System.Windows.Forms.TextBox();
+            this.reservasiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dtBooking = new System.Windows.Forms.DateTimePicker();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbNamaHotel = new System.Windows.Forms.TextBox();
+            this.reservasiBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet26 = new ReservasiHotel.HotelDataSet26();
+            this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +59,6 @@ namespace ReservasiHotel
             this.tbLamaInap = new System.Windows.Forms.TextBox();
             this.tbBiaya = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbNoKamar = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,9 +69,21 @@ namespace ReservasiHotel
             this.reservasiTableAdapter = new ReservasiHotel.HotelDataSet4TableAdapters.ReservasiTableAdapter();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
+            this.reservasiTableAdapter1 = new ReservasiHotel.HotelDataSet8TableAdapters.ReservasiTableAdapter();
+            this.reservasiTableAdapter2 = new ReservasiHotel.HotelDataSet26TableAdapters.ReservasiTableAdapter();
+            this.cbIdRsp = new System.Windows.Forms.ComboBox();
+            this.cbIdTamu = new System.Windows.Forms.ComboBox();
+            this.cbNoKamar = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.tbIdRsv = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet26)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +102,7 @@ namespace ReservasiHotel
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 41);
+            this.label2.Location = new System.Drawing.Point(37, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 24);
             this.label2.TabIndex = 1;
@@ -96,7 +111,7 @@ namespace ReservasiHotel
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(87, 102);
+            this.label3.Location = new System.Drawing.Point(87, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 2;
@@ -105,7 +120,7 @@ namespace ReservasiHotel
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 154);
+            this.label4.Location = new System.Drawing.Point(87, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 3;
@@ -114,7 +129,7 @@ namespace ReservasiHotel
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(87, 207);
+            this.label5.Location = new System.Drawing.Point(87, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 4;
@@ -129,14 +144,15 @@ namespace ReservasiHotel
             this.label6.TabIndex = 5;
             this.label6.Text = "Tanggal Booking";
             // 
-            // tbIdReservasi
+            // reservasiBindingSource1
             // 
-            this.tbIdReservasi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIdReservasi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "id_reservasi", true));
-            this.tbIdReservasi.Location = new System.Drawing.Point(242, 100);
-            this.tbIdReservasi.Name = "tbIdReservasi";
-            this.tbIdReservasi.Size = new System.Drawing.Size(217, 22);
-            this.tbIdReservasi.TabIndex = 6;
+            this.reservasiBindingSource1.DataMember = "Reservasi";
+            this.reservasiBindingSource1.DataSource = this.hotelDataSet8;
+            // 
+            // hotelDataSet8
+            // 
+            this.hotelDataSet8.DataSetName = "HotelDataSet8";
+            this.hotelDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reservasiBindingSource
             // 
@@ -148,26 +164,14 @@ namespace ReservasiHotel
             this.hotelDataSet4.DataSetName = "HotelDataSet4";
             this.hotelDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbIdRsp
+            // reservasiBindingSource2
             // 
-            this.tbIdRsp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIdRsp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "id_petugas", true));
-            this.tbIdRsp.Location = new System.Drawing.Point(242, 152);
-            this.tbIdRsp.Name = "tbIdRsp";
-            this.tbIdRsp.Size = new System.Drawing.Size(217, 22);
-            this.tbIdRsp.TabIndex = 7;
-            // 
-            // tbIdTamu
-            // 
-            this.tbIdTamu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIdTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "id_tamu", true));
-            this.tbIdTamu.Location = new System.Drawing.Point(242, 210);
-            this.tbIdTamu.Name = "tbIdTamu";
-            this.tbIdTamu.Size = new System.Drawing.Size(217, 22);
-            this.tbIdTamu.TabIndex = 8;
+            this.reservasiBindingSource2.DataMember = "Reservasi";
+            this.reservasiBindingSource2.DataSource = this.hotelDataSet8;
             // 
             // dtBooking
             // 
+            this.dtBooking.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource1, "tanggal_booking", true));
             this.dtBooking.Location = new System.Drawing.Point(242, 259);
             this.dtBooking.Name = "dtBooking";
             this.dtBooking.Size = new System.Drawing.Size(247, 22);
@@ -176,11 +180,11 @@ namespace ReservasiHotel
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(473, 460);
+            this.btnNew.Location = new System.Drawing.Point(599, 459);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(106, 48);
             this.btnNew.TabIndex = 10;
-            this.btnNew.Text = "NEW";
+            this.btnNew.Text = "SAVE";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -198,10 +202,12 @@ namespace ReservasiHotel
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.tbIdRsv);
+            this.groupBox1.Controls.Add(this.cbIdTamu);
+            this.groupBox1.Controls.Add(this.cbIdRsp);
+            this.groupBox1.Controls.Add(this.tbNamaHotel);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.dtBooking);
-            this.groupBox1.Controls.Add(this.tbIdTamu);
-            this.groupBox1.Controls.Add(this.tbIdRsp);
-            this.groupBox1.Controls.Add(this.tbIdReservasi);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -212,6 +218,34 @@ namespace ReservasiHotel
             this.groupBox1.Size = new System.Drawing.Size(574, 340);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // tbNamaHotel
+            // 
+            this.tbNamaHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource3, "nama_hotel", true));
+            this.tbNamaHotel.Location = new System.Drawing.Point(242, 82);
+            this.tbNamaHotel.Name = "tbNamaHotel";
+            this.tbNamaHotel.Size = new System.Drawing.Size(217, 22);
+            this.tbNamaHotel.TabIndex = 11;
+            this.tbNamaHotel.TextChanged += new System.EventHandler(this.tbNamaHotel_TextChanged);
+            // 
+            // reservasiBindingSource3
+            // 
+            this.reservasiBindingSource3.DataMember = "Reservasi";
+            this.reservasiBindingSource3.DataSource = this.hotelDataSet26;
+            // 
+            // hotelDataSet26
+            // 
+            this.hotelDataSet26.DataSetName = "HotelDataSet26";
+            this.hotelDataSet26.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(87, 83);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 17);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Nama Hotel";
             // 
             // label7
             // 
@@ -261,7 +295,7 @@ namespace ReservasiHotel
             // 
             // cbJenisKamar
             // 
-            this.cbJenisKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "tipe_kamar", true));
+            this.cbJenisKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource2, "tipe_kamar", true));
             this.cbJenisKamar.FormattingEnabled = true;
             this.cbJenisKamar.Items.AddRange(new object[] {
             "VIP",
@@ -277,7 +311,7 @@ namespace ReservasiHotel
             // tbHarga
             // 
             this.tbHarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbHarga.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "harga_sewa", true));
+            this.tbHarga.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource1, "harga_sewa", true));
             this.tbHarga.Location = new System.Drawing.Point(250, 122);
             this.tbHarga.Name = "tbHarga";
             this.tbHarga.Size = new System.Drawing.Size(220, 22);
@@ -286,7 +320,7 @@ namespace ReservasiHotel
             // tbLamaInap
             // 
             this.tbLamaInap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbLamaInap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "lama_menginap", true));
+            this.tbLamaInap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource2, "lama_menginap", true));
             this.tbLamaInap.Location = new System.Drawing.Point(250, 210);
             this.tbLamaInap.Name = "tbLamaInap";
             this.tbLamaInap.Size = new System.Drawing.Size(220, 22);
@@ -296,7 +330,7 @@ namespace ReservasiHotel
             // tbBiaya
             // 
             this.tbBiaya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbBiaya.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "total_harga", true));
+            this.tbBiaya.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource1, "total_harga", true));
             this.tbBiaya.Location = new System.Drawing.Point(250, 257);
             this.tbBiaya.Name = "tbBiaya";
             this.tbBiaya.Size = new System.Drawing.Size(220, 22);
@@ -305,7 +339,7 @@ namespace ReservasiHotel
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.tbNoKamar);
+            this.groupBox2.Controls.Add(this.cbNoKamar);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.tbBiaya);
             this.groupBox2.Controls.Add(this.tbLamaInap);
@@ -321,14 +355,6 @@ namespace ReservasiHotel
             this.groupBox2.Size = new System.Drawing.Size(564, 340);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
-            // 
-            // tbNoKamar
-            // 
-            this.tbNoKamar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservasiBindingSource, "no_kamar", true));
-            this.tbNoKamar.Location = new System.Drawing.Point(250, 165);
-            this.tbNoKamar.Name = "tbNoKamar";
-            this.tbNoKamar.Size = new System.Drawing.Size(220, 22);
-            this.tbNoKamar.TabIndex = 23;
             // 
             // label15
             // 
@@ -405,7 +431,7 @@ namespace ReservasiHotel
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(252, 461);
+            this.btnClear.Location = new System.Drawing.Point(442, 459);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(106, 47);
             this.btnClear.TabIndex = 29;
@@ -424,11 +450,62 @@ namespace ReservasiHotel
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // reservasiTableAdapter1
+            // 
+            this.reservasiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // reservasiTableAdapter2
+            // 
+            this.reservasiTableAdapter2.ClearBeforeFill = true;
+            // 
+            // cbIdRsp
+            // 
+            this.cbIdRsp.FormattingEnabled = true;
+            this.cbIdRsp.Location = new System.Drawing.Point(242, 165);
+            this.cbIdRsp.Name = "cbIdRsp";
+            this.cbIdRsp.Size = new System.Drawing.Size(217, 24);
+            this.cbIdRsp.TabIndex = 13;
+            // 
+            // cbIdTamu
+            // 
+            this.cbIdTamu.FormattingEnabled = true;
+            this.cbIdTamu.Location = new System.Drawing.Point(242, 209);
+            this.cbIdTamu.Name = "cbIdTamu";
+            this.cbIdTamu.Size = new System.Drawing.Size(217, 24);
+            this.cbIdTamu.TabIndex = 14;
+            // 
+            // cbNoKamar
+            // 
+            this.cbNoKamar.FormattingEnabled = true;
+            this.cbNoKamar.Location = new System.Drawing.Point(250, 165);
+            this.cbNoKamar.Name = "cbNoKamar";
+            this.cbNoKamar.Size = new System.Drawing.Size(220, 24);
+            this.cbNoKamar.TabIndex = 15;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(131, 460);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(106, 47);
+            this.btnAdd.TabIndex = 31;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // tbIdRsv
+            // 
+            this.tbIdRsv.Location = new System.Drawing.Point(242, 124);
+            this.tbIdRsv.Name = "tbIdRsv";
+            this.tbIdRsv.Size = new System.Drawing.Size(217, 22);
+            this.tbIdRsv.TabIndex = 15;
+            // 
             // FormReservasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1483, 708);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox3);
@@ -440,10 +517,15 @@ namespace ReservasiHotel
             this.Name = "FormReservasi";
             this.Text = "Form Reservasi";
             this.Load += new System.EventHandler(this.FormReservasi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservasiBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet26)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -461,9 +543,6 @@ namespace ReservasiHotel
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbIdReservasi;
-        private System.Windows.Forms.TextBox tbIdRsp;
-        private System.Windows.Forms.TextBox tbIdTamu;
         private System.Windows.Forms.DateTimePicker dtBooking;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnClose;
@@ -484,12 +563,25 @@ namespace ReservasiHotel
         private System.Windows.Forms.TextBox tbJmlBayar;
         private System.Windows.Forms.TextBox tbKembalian;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox tbNoKamar;
         private System.Windows.Forms.Label label15;
         private HotelDataSet4 hotelDataSet4;
         private System.Windows.Forms.BindingSource reservasiBindingSource;
         private HotelDataSet4TableAdapters.ReservasiTableAdapter reservasiTableAdapter;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnView;
+        private HotelDataSet8 hotelDataSet8;
+        private System.Windows.Forms.BindingSource reservasiBindingSource1;
+        private HotelDataSet8TableAdapters.ReservasiTableAdapter reservasiTableAdapter1;
+        private System.Windows.Forms.BindingSource reservasiBindingSource2;
+        private System.Windows.Forms.TextBox tbNamaHotel;
+        private System.Windows.Forms.Label label16;
+        private HotelDataSet26 hotelDataSet26;
+        private System.Windows.Forms.BindingSource reservasiBindingSource3;
+        private HotelDataSet26TableAdapters.ReservasiTableAdapter reservasiTableAdapter2;
+        private System.Windows.Forms.ComboBox cbIdTamu;
+        private System.Windows.Forms.ComboBox cbIdRsp;
+        private System.Windows.Forms.ComboBox cbNoKamar;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox tbIdRsv;
     }
 }

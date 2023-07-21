@@ -36,19 +36,20 @@ namespace ReservasiHotel
             this.fasilitasKamarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet5 = new ReservasiHotel.HotelDataSet5();
             this.btnback = new System.Windows.Forms.Button();
-            this.dataGridViewFasilitasKamar = new System.Windows.Forms.DataGridView();
             this.fasilitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet6 = new ReservasiHotel.HotelDataSet6();
             this.fasilitas_KamarTableAdapter = new ReservasiHotel.HotelDataSet5TableAdapters.Fasilitas_KamarTableAdapter();
             this.fasilitasTableAdapter = new ReservasiHotel.HotelDataSet6TableAdapters.FasilitasTableAdapter();
-            this.idfasilitasDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fasilitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelDataSet16 = new ReservasiHotel.HotelDataSet16();
+            this.fasilitasKamarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fasilitas_KamarTableAdapter1 = new ReservasiHotel.HotelDataSet16TableAdapters.Fasilitas_KamarTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFasilitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasilitasKamarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFasilitasKamar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasilitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasilitasKamarBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewFasilitas
@@ -59,8 +60,8 @@ namespace ReservasiHotel
             this.dataGridViewFasilitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idfasilitasDataGridViewTextBoxColumn,
             this.nokamarDataGridViewTextBoxColumn});
-            this.dataGridViewFasilitas.DataSource = this.fasilitasKamarBindingSource;
-            this.dataGridViewFasilitas.Location = new System.Drawing.Point(40, 259);
+            this.dataGridViewFasilitas.DataSource = this.fasilitasKamarBindingSource1;
+            this.dataGridViewFasilitas.Location = new System.Drawing.Point(92, 37);
             this.dataGridViewFasilitas.Name = "dataGridViewFasilitas";
             this.dataGridViewFasilitas.RowHeadersWidth = 51;
             this.dataGridViewFasilitas.RowTemplate.Height = 24;
@@ -98,29 +99,13 @@ namespace ReservasiHotel
             this.btnback.BackColor = System.Drawing.Color.White;
             this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.ForeColor = System.Drawing.Color.Black;
-            this.btnback.Location = new System.Drawing.Point(990, 37);
+            this.btnback.Location = new System.Drawing.Point(524, 37);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(90, 52);
+            this.btnback.Size = new System.Drawing.Size(81, 44);
             this.btnback.TabIndex = 1;
             this.btnback.Text = "BACK";
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // dataGridViewFasilitasKamar
-            // 
-            this.dataGridViewFasilitasKamar.AutoGenerateColumns = false;
-            this.dataGridViewFasilitasKamar.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dataGridViewFasilitasKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFasilitasKamar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idfasilitasDataGridViewTextBoxColumn1,
-            this.fasilitasDataGridViewTextBoxColumn});
-            this.dataGridViewFasilitasKamar.DataSource = this.fasilitasBindingSource;
-            this.dataGridViewFasilitasKamar.Location = new System.Drawing.Point(40, 37);
-            this.dataGridViewFasilitasKamar.Name = "dataGridViewFasilitasKamar";
-            this.dataGridViewFasilitasKamar.RowHeadersWidth = 51;
-            this.dataGridViewFasilitasKamar.RowTemplate.Height = 24;
-            this.dataGridViewFasilitasKamar.Size = new System.Drawing.Size(919, 196);
-            this.dataGridViewFasilitasKamar.TabIndex = 2;
             // 
             // fasilitasBindingSource
             // 
@@ -140,28 +125,26 @@ namespace ReservasiHotel
             // 
             this.fasilitasTableAdapter.ClearBeforeFill = true;
             // 
-            // idfasilitasDataGridViewTextBoxColumn1
+            // hotelDataSet16
             // 
-            this.idfasilitasDataGridViewTextBoxColumn1.DataPropertyName = "id_fasilitas";
-            this.idfasilitasDataGridViewTextBoxColumn1.HeaderText = "id_fasilitas";
-            this.idfasilitasDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.idfasilitasDataGridViewTextBoxColumn1.Name = "idfasilitasDataGridViewTextBoxColumn1";
+            this.hotelDataSet16.DataSetName = "HotelDataSet16";
+            this.hotelDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fasilitasDataGridViewTextBoxColumn
+            // fasilitasKamarBindingSource1
             // 
-            this.fasilitasDataGridViewTextBoxColumn.DataPropertyName = "fasilitas";
-            this.fasilitasDataGridViewTextBoxColumn.HeaderText = "fasilitas";
-            this.fasilitasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fasilitasDataGridViewTextBoxColumn.Name = "fasilitasDataGridViewTextBoxColumn";
-            this.fasilitasDataGridViewTextBoxColumn.Width = 700;
+            this.fasilitasKamarBindingSource1.DataMember = "Fasilitas_Kamar";
+            this.fasilitasKamarBindingSource1.DataSource = this.hotelDataSet16;
+            // 
+            // fasilitas_KamarTableAdapter1
+            // 
+            this.fasilitas_KamarTableAdapter1.ClearBeforeFill = true;
             // 
             // DataFasilitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1112, 504);
-            this.Controls.Add(this.dataGridViewFasilitasKamar);
+            this.ClientSize = new System.Drawing.Size(636, 396);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.dataGridViewFasilitas);
             this.Name = "DataFasilitas";
@@ -170,9 +153,10 @@ namespace ReservasiHotel
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFasilitas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasilitasKamarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFasilitasKamar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasilitasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasilitasKamarBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +165,6 @@ namespace ReservasiHotel
 
         private System.Windows.Forms.DataGridView dataGridViewFasilitas;
         private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.DataGridView dataGridViewFasilitasKamar;
         private HotelDataSet5 hotelDataSet5;
         private System.Windows.Forms.BindingSource fasilitasKamarBindingSource;
         private HotelDataSet5TableAdapters.Fasilitas_KamarTableAdapter fasilitas_KamarTableAdapter;
@@ -190,7 +173,8 @@ namespace ReservasiHotel
         private HotelDataSet6 hotelDataSet6;
         private System.Windows.Forms.BindingSource fasilitasBindingSource;
         private HotelDataSet6TableAdapters.FasilitasTableAdapter fasilitasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idfasilitasDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fasilitasDataGridViewTextBoxColumn;
+        private HotelDataSet16 hotelDataSet16;
+        private System.Windows.Forms.BindingSource fasilitasKamarBindingSource1;
+        private HotelDataSet16TableAdapters.Fasilitas_KamarTableAdapter fasilitas_KamarTableAdapter1;
     }
 }

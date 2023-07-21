@@ -37,6 +37,8 @@ namespace ReservasiHotel
             this.dataResepsionisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataTamuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataFasilitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,36 +59,39 @@ namespace ReservasiHotel
             this.formReservasiToolStripMenuItem,
             this.dataKamarToolStripMenuItem,
             this.dataResepsionisToolStripMenuItem,
-            this.dataTamuToolStripMenuItem});
+            this.dataTamuToolStripMenuItem,
+            this.dataFasilitasToolStripMenuItem,
+            this.dataHotelToolStripMenuItem});
             this.dataMasterToolStripMenuItem.Name = "dataMasterToolStripMenuItem";
             this.dataMasterToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.dataMasterToolStripMenuItem.Text = "Data Master";
+            this.dataMasterToolStripMenuItem.Click += new System.EventHandler(this.dataMasterToolStripMenuItem_Click);
             // 
             // formReservasiToolStripMenuItem
             // 
             this.formReservasiToolStripMenuItem.Name = "formReservasiToolStripMenuItem";
-            this.formReservasiToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.formReservasiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.formReservasiToolStripMenuItem.Text = "Form Reservasi";
             this.formReservasiToolStripMenuItem.Click += new System.EventHandler(this.formReservasiToolStripMenuItem_Click);
             // 
             // dataKamarToolStripMenuItem
             // 
             this.dataKamarToolStripMenuItem.Name = "dataKamarToolStripMenuItem";
-            this.dataKamarToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.dataKamarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataKamarToolStripMenuItem.Text = "Data Kamar";
             this.dataKamarToolStripMenuItem.Click += new System.EventHandler(this.dataKamarToolStripMenuItem_Click);
             // 
             // dataResepsionisToolStripMenuItem
             // 
             this.dataResepsionisToolStripMenuItem.Name = "dataResepsionisToolStripMenuItem";
-            this.dataResepsionisToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.dataResepsionisToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataResepsionisToolStripMenuItem.Text = "Data Resepsionis";
             this.dataResepsionisToolStripMenuItem.Click += new System.EventHandler(this.dataResepsionisToolStripMenuItem_Click);
             // 
             // dataTamuToolStripMenuItem
             // 
             this.dataTamuToolStripMenuItem.Name = "dataTamuToolStripMenuItem";
-            this.dataTamuToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.dataTamuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataTamuToolStripMenuItem.Text = "Data Tamu";
             this.dataTamuToolStripMenuItem.Click += new System.EventHandler(this.dataTamuToolStripMenuItem_Click);
             // 
@@ -95,6 +100,20 @@ namespace ReservasiHotel
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // dataFasilitasToolStripMenuItem
+            // 
+            this.dataFasilitasToolStripMenuItem.Name = "dataFasilitasToolStripMenuItem";
+            this.dataFasilitasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataFasilitasToolStripMenuItem.Text = "Data Fasilitas";
+            this.dataFasilitasToolStripMenuItem.Click += new System.EventHandler(this.dataFasilitasToolStripMenuItem_Click);
+            // 
+            // dataHotelToolStripMenuItem
+            // 
+            this.dataHotelToolStripMenuItem.Name = "dataHotelToolStripMenuItem";
+            this.dataHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataHotelToolStripMenuItem.Text = "Data Hotel";
+            this.dataHotelToolStripMenuItem.Click += new System.EventHandler(this.dataHotelToolStripMenuItem_Click);
             // 
             // FormDataMaster
             // 
@@ -122,6 +141,8 @@ namespace ReservasiHotel
         private System.Windows.Forms.ToolStripMenuItem dataResepsionisToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dataTamuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataFasilitasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataHotelToolStripMenuItem;
     }
 }
 

@@ -15,23 +15,27 @@ namespace ReservasiHotel
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
-            dataGridViewFasilitasKamar.Visible = true;
             dataGridViewFasilitas.Visible = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet16.Fasilitas_Kamar' table. You can move, or remove it, as needed.
+            this.fasilitas_KamarTableAdapter1.Fill(this.hotelDataSet16.Fasilitas_Kamar);
             // TODO: This line of code loads data into the 'hotelDataSet6.Fasilitas' table. You can move, or remove it, as needed.
             this.fasilitasTableAdapter.Fill(this.hotelDataSet6.Fasilitas);
             // TODO: This line of code loads data into the 'hotelDataSet5.Fasilitas_Kamar' table. You can move, or remove it, as needed.
             this.fasilitas_KamarTableAdapter.Fill(this.hotelDataSet5.Fasilitas_Kamar);
+            FormDataMaster dm = new FormDataMaster();
+            dm.Show();
+            this.Hide();
 
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            FormDataMaster dm = new FormDataMaster();
-            dm.Show();
+            FasilitasKamar fk = new FasilitasKamar();
+            fk.Show();
             this.Hide();
         }
     }

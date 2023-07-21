@@ -44,5 +44,24 @@ namespace ReservasiHotel
             dt.Show();
             this.Hide();
         }
+
+        private void dataMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataFasilitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FasilitasKamar fk = new FasilitasKamar();
+            fk.Show();
+            this.Hide();
+        }
+
+        private void dataHotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDataHotel dh = new FormDataHotel();
+            dh.Show();
+            this.Hide();
+        }
     }
 }

@@ -41,18 +41,23 @@ namespace ReservasiHotel
             this.tbNoTelp = new System.Windows.Forms.TextBox();
             this.rbAlamat = new System.Windows.Forms.RichTextBox();
             this.dataGridViewTamu = new System.Windows.Forms.DataGridView();
+            this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namatamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.tamuTableAdapter = new ReservasiHotel.HotelDataSet1TableAdapters.TamuTableAdapter();
-            this.idtamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namatamuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notelpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelDataSet15 = new ReservasiHotel.HotelDataSet15();
+            this.tamuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tamuTableAdapter1 = new ReservasiHotel.HotelDataSet15TableAdapters.TamuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +98,7 @@ namespace ReservasiHotel
             // 
             // tbIdTamu
             // 
-            this.tbIdTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "id_tamu", true));
+            this.tbIdTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource1, "id_tamu", true));
             this.tbIdTamu.Location = new System.Drawing.Point(286, 218);
             this.tbIdTamu.Name = "tbIdTamu";
             this.tbIdTamu.Size = new System.Drawing.Size(210, 22);
@@ -111,7 +116,7 @@ namespace ReservasiHotel
             // 
             // tbNamaTamu
             // 
-            this.tbNamaTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "nama_tamu", true));
+            this.tbNamaTamu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource1, "nama_tamu", true));
             this.tbNamaTamu.Location = new System.Drawing.Point(286, 273);
             this.tbNamaTamu.Name = "tbNamaTamu";
             this.tbNamaTamu.Size = new System.Drawing.Size(210, 22);
@@ -119,7 +124,7 @@ namespace ReservasiHotel
             // 
             // tbNoTelp
             // 
-            this.tbNoTelp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "no_telp", true));
+            this.tbNoTelp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource1, "no_telp", true));
             this.tbNoTelp.Location = new System.Drawing.Point(286, 324);
             this.tbNoTelp.Name = "tbNoTelp";
             this.tbNoTelp.Size = new System.Drawing.Size(210, 22);
@@ -127,7 +132,7 @@ namespace ReservasiHotel
             // 
             // rbAlamat
             // 
-            this.rbAlamat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource, "alamat", true));
+            this.rbAlamat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tamuBindingSource1, "alamat", true));
             this.rbAlamat.Location = new System.Drawing.Point(286, 377);
             this.rbAlamat.Name = "rbAlamat";
             this.rbAlamat.Size = new System.Drawing.Size(210, 62);
@@ -143,13 +148,45 @@ namespace ReservasiHotel
             this.namatamuDataGridViewTextBoxColumn,
             this.notelpDataGridViewTextBoxColumn,
             this.alamatDataGridViewTextBoxColumn});
-            this.dataGridViewTamu.DataSource = this.tamuBindingSource;
+            this.dataGridViewTamu.DataSource = this.tamuBindingSource1;
             this.dataGridViewTamu.Location = new System.Drawing.Point(113, 40);
             this.dataGridViewTamu.Name = "dataGridViewTamu";
             this.dataGridViewTamu.RowHeadersWidth = 51;
             this.dataGridViewTamu.RowTemplate.Height = 24;
             this.dataGridViewTamu.Size = new System.Drawing.Size(556, 150);
             this.dataGridViewTamu.TabIndex = 8;
+            // 
+            // idtamuDataGridViewTextBoxColumn
+            // 
+            this.idtamuDataGridViewTextBoxColumn.DataPropertyName = "id_tamu";
+            this.idtamuDataGridViewTextBoxColumn.HeaderText = "id_tamu";
+            this.idtamuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idtamuDataGridViewTextBoxColumn.Name = "idtamuDataGridViewTextBoxColumn";
+            this.idtamuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // namatamuDataGridViewTextBoxColumn
+            // 
+            this.namatamuDataGridViewTextBoxColumn.DataPropertyName = "nama_tamu";
+            this.namatamuDataGridViewTextBoxColumn.HeaderText = "nama_tamu";
+            this.namatamuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.namatamuDataGridViewTextBoxColumn.Name = "namatamuDataGridViewTextBoxColumn";
+            this.namatamuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // notelpDataGridViewTextBoxColumn
+            // 
+            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
+            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
+            this.notelpDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
+            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            this.alamatDataGridViewTextBoxColumn.Width = 160;
             // 
             // btnOpen
             // 
@@ -195,41 +232,25 @@ namespace ReservasiHotel
             // 
             this.tamuTableAdapter.ClearBeforeFill = true;
             // 
-            // idtamuDataGridViewTextBoxColumn
+            // hotelDataSet15
             // 
-            this.idtamuDataGridViewTextBoxColumn.DataPropertyName = "id_tamu";
-            this.idtamuDataGridViewTextBoxColumn.HeaderText = "id_tamu";
-            this.idtamuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idtamuDataGridViewTextBoxColumn.Name = "idtamuDataGridViewTextBoxColumn";
+            this.hotelDataSet15.DataSetName = "HotelDataSet15";
+            this.hotelDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // namatamuDataGridViewTextBoxColumn
+            // tamuBindingSource1
             // 
-            this.namatamuDataGridViewTextBoxColumn.DataPropertyName = "nama_tamu";
-            this.namatamuDataGridViewTextBoxColumn.HeaderText = "nama_tamu";
-            this.namatamuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namatamuDataGridViewTextBoxColumn.Name = "namatamuDataGridViewTextBoxColumn";
-            this.namatamuDataGridViewTextBoxColumn.Width = 125;
+            this.tamuBindingSource1.DataMember = "Tamu";
+            this.tamuBindingSource1.DataSource = this.hotelDataSet15;
             // 
-            // notelpDataGridViewTextBoxColumn
+            // tamuTableAdapter1
             // 
-            this.notelpDataGridViewTextBoxColumn.DataPropertyName = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.HeaderText = "no_telp";
-            this.notelpDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.notelpDataGridViewTextBoxColumn.Name = "notelpDataGridViewTextBoxColumn";
-            this.notelpDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "alamat";
-            this.alamatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            this.alamatDataGridViewTextBoxColumn.Width = 160;
+            this.tamuTableAdapter1.ClearBeforeFill = true;
             // 
             // FormDataTamu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(799, 541);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
@@ -250,6 +271,8 @@ namespace ReservasiHotel
             ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTamu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tamuBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +300,8 @@ namespace ReservasiHotel
         private System.Windows.Forms.DataGridViewTextBoxColumn namatamuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notelpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private HotelDataSet15 hotelDataSet15;
+        private System.Windows.Forms.BindingSource tamuBindingSource1;
+        private HotelDataSet15TableAdapters.TamuTableAdapter tamuTableAdapter1;
     }
 }
